@@ -23,9 +23,10 @@ void shiftNegativeOneSide(int arr[], int size)
     }
 }
 
-// method 1
+// method 1 / array
 void shiftarray(int arr[], int size, int n)
 {
+    cout << "Array wala" << endl;
     for (int i = 0; i < n; i++)
     {
         int temp = arr[size - 1];
@@ -37,14 +38,30 @@ void shiftarray(int arr[], int size, int n)
     }
 }
 
-// method 2
+// method 2 // vector
 void shiftarray2(int arr[], int size, int n)
 {
+    cout << "Vector vala" << endl;
     vector<int> ans(size);
     for (int i = 0; i < size; i++)
     {
         swap(arr[i], arr[(i + n) % size]);
     }
+}
+
+int missingNumber(vector<int> &arr)
+{
+    cout << "Missing number" << endl;
+    int sum = 0;
+    int n = arr.size();
+    for (int i = 0; i < n; i++)
+    {
+        sum = sum + arr[i];
+    }
+
+    int total = ((n) * (n + 1)) / 2;
+    int ans = total - sum;
+    return ans;
 }
 
 int main()
@@ -135,18 +152,29 @@ int main()
 
     // shifting n to right
 
-    int arr[] = {1, 2, 3, 4, 5};
-    int size = 5;
-    // int n = 2;
-    int n;
-    cout << "Enter a value:";
-    cin >> n;
+    // int arr[] = {1, 2, 3, 4, 5};
+    // int size = 5;
+    // // int n = 2;
+    // int n;
+    // cout << "Enter a value:";
+    // cin >> n;
 
-    shiftarray2(arr, size, n);
+    // shiftarray(arr, size, n);
+    // shiftarray2(arr, size, n);
 
+    // 268. Missing Number
+
+    vector<int> arr = {1, 2, 0, 4, 5};
+
+    cout << "Number Missing =" << endl;
+
+    missingNumber(arr);
+    cout << missingNumber(arr);
     // print array
-    for (auto i : arr)
-    {
-        cout << i << " ";
-    }
+    // for (auto i : arr)
+    // {
+    //     cout << i << " ";
+    // }
+
+    return 0;
 }
