@@ -6,6 +6,9 @@ using namespace std;
 // 1)shift negative on one side
 // 2)short 0 1 2 (leetcode (short colour))
 // 3)Rotate Array N times (leetcode)
+// 4)Missing Number (leetcode)
+// 5)Rearange Array Elements By Sign (leetcode) (H.W)
+// 6)Row With Maximum Ones (leetcode)
 
 void shiftNegativeOneSide(int arr[], int size)
 {
