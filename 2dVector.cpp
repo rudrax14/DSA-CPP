@@ -11,16 +11,16 @@ int main()
     vector<int> v1(5);
     vector<int> v2(5, 101);
 
-    // insert
+    // insert operation
     v.push_back(4);
     v.push_back(8);
     v.push_back(12);
     v.push_back(11);
     v.push_back(4);
 
-    cout << v.size() << endl;
+    cout << v.size() << endl; // size kaise nikale
 
-    cout << (v.empty() ? "Vector is empty" : "Vector is not empty") << endl;
+    cout << (v.empty() ? "Vector is empty" : "Vector is not empty") << endl; // is emplty or not 
 
     cout << "Size of vector: " << v.size() << endl;
 
@@ -30,9 +30,9 @@ int main()
         cout << v[i] << " ";
     }
     cout << endl;
-
+//---------------------------------------------------------------------//
     // 2D Array
-    vector<vector<int>> arr2d(5, vector<int>(10, -1));
+    vector<vector<int>> arr2d(5, vector<int>(5, -1));
 
     // row size -> arr.size()
     for (int i = 0; i < arr2d.size(); i++)

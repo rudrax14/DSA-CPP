@@ -1,3 +1,5 @@
+// transpose mai row colum baan jata hai
+
 #include <iostream>
 using namespace std;
 void printArray(int arr[3][3], int row, int col)

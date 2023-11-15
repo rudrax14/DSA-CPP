@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <limits.h>
+#include <algorithm>
 using namespace std;
 
 // Questions
@@ -9,6 +11,7 @@ using namespace std;
 // 4)Missing Number (leetcode)
 // 5)Rearange Array Elements By Sign (leetcode) (H.W)
 // 6)Row With Maximum Ones (leetcode)
+// 7)Rotate Iamge (leetcode) (IMP)
 
 void shiftNegativeOneSide(int arr[], int size)
 {
@@ -64,9 +67,22 @@ int missingNumber(vector<int> &arr)
     return ans;
 }
 
+// transpse vector
+void transpose(vector<vector<int>> arr)
+{
+    int n = arr.size();
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < arr[i].size(); j++)
+        {
+            swap(arr[i][j], arr[j][i]);
+        }
+    }
+}
 int main()
 
 {
+    cout << "-------OUTPUT-------" << endl;
     // shiftNegativeOneSide
     // int arr[] = {1, -2, 3, 12, -3, 5, -8};
     // int size = 7;
@@ -164,17 +180,70 @@ int main()
 
     // 268. Missing Number
 
-    vector<int> arr = {1, 2, 0, 4, 5};
+    // vector<int> arr = {1, 2, 0, 4, 5};
 
-    cout << "Number Missing =" << endl;
+    // cout << "Number Missing =" << endl;
 
-    missingNumber(arr);
-    cout << missingNumber(arr);
+    // missingNumber(arr);
+    // cout << missingNumber(arr);
     // print array
     // for (auto i : arr)
     // {
     //     cout << i << " ";
     // }
 
+    // rotate vector 90 degree clockwise
+
+    vector<vector<int>> arr;
+
+    vector<int> vec1({1, 2, 3});
+    vector<int> vec2({4, 5, 6});
+    vector<int> vec3({7, 8, 9});
+
+    arr.push_back(vec1);
+    arr.push_back(vec2);
+    arr.push_back(vec3);
+
+    cout << "Before transpose:" << endl;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = 0; j < arr[i].size(); j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "After transpose:" << endl;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = i; j < arr[i].size(); j++)
+        {
+            swap(arr[i][j], arr[j][i]);
+        }
+    }
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = 0; j < arr[i].size(); j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "reverse" << endl;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        reverse(arr[i].begin(), arr[i].end());
+    }
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = 0; j < arr[i].size(); j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
