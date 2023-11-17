@@ -67,7 +67,7 @@ int missingNumber(vector<int> &arr)
     return ans;
 }
 
-// transpse vector
+// transpose vector
 void transpose(vector<vector<int>> arr)
 {
     int n = arr.size();
