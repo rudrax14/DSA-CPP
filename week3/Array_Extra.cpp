@@ -83,6 +83,7 @@ int main()
 
 {
     cout << "-------OUTPUT-------" << endl;
+    //----------------------------------------------------------------//
     // shiftNegativeOneSide
     // int arr[] = {1, -2, 3, 12, -3, 5, -8};
     // int size = 7;
@@ -111,7 +112,7 @@ int main()
     // {
     //     cout << arr[i] << " ";
     // }
-
+//----------------------------------------------------------------//
     // short 0,1,2
 
     // int arr[] = {0, 1, 2, 1, 1, 2, 0, 0, 2};
@@ -141,19 +142,19 @@ int main()
     // }
 
     // using for loop below
-    // int i = 0;
-    // int j = size - 1;
-    // for (int index = 0; index <= j; index++)
+    // int start = 0;
+    // int end = size - 1;
+    // for (int index = 0; index <= end; index++)
     // {
     //     if (arr[index] == 0)
     //     {
-    //         swap(arr[index], arr[i]);
-    //         i++;
+    //         swap(arr[index], arr[start]);
+    //         start++;
     //     }
     //     else if (arr[index] == 2)
     //     {
-    //         swap(arr[index], arr[j]);
-    //         j--;
+    //         swap(arr[index], arr[end]);
+    //         end--;
     //         index--;
     //     }
     // }
@@ -166,6 +167,7 @@ int main()
 
     // return 0;
 
+//----------------------------------------------------------------//
     // shifting n to right
 
     // int arr[] = {1, 2, 3, 4, 5};
@@ -177,7 +179,7 @@ int main()
 
     // shiftarray(arr, size, n);
     // shiftarray2(arr, size, n);
-
+//----------------------------------------------------------------//
     // 268. Missing Number
 
     // vector<int> arr = {1, 2, 0, 4, 5};
@@ -191,59 +193,59 @@ int main()
     // {
     //     cout << i << " ";
     // }
-
+//----------------------------------------------------------------//
     // rotate vector 90 degree clockwise
 
-    vector<vector<int>> arr;
+    // vector<vector<int>> arr;
 
-    vector<int> vec1({1, 2, 3});
-    vector<int> vec2({4, 5, 6});
-    vector<int> vec3({7, 8, 9});
+    // vector<int> vec1({1, 2, 3});
+    // vector<int> vec2({4, 5, 6});
+    // vector<int> vec3({7, 8, 9});
 
-    arr.push_back(vec1);
-    arr.push_back(vec2);
-    arr.push_back(vec3);
+    // arr.push_back(vec1);
+    // arr.push_back(vec2);
+    // arr.push_back(vec3);
 
-    cout << "Before transpose:" << endl;
-    for (int i = 0; i < arr.size(); i++)
-    {
-        for (int j = 0; j < arr[i].size(); j++)
-        {
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // cout << "Before transpose:" << endl;
+    // for (int i = 0; i < arr.size(); i++)
+    // {
+    //     for (int j = 0; j < arr[i].size(); j++)
+    //     {
+    //         cout << arr[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
-    cout << "After transpose:" << endl;
-    for (int i = 0; i < arr.size(); i++)
-    {
-        for (int j = i; j < arr[i].size(); j++)
-        {
-            swap(arr[i][j], arr[j][i]);
-        }
-    }
-    for (int i = 0; i < arr.size(); i++)
-    {
-        for (int j = 0; j < arr[i].size(); j++)
-        {
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // cout << "After transpose:" << endl;
+    // for (int i = 0; i < arr.size(); i++)
+    // {
+    //     for (int j = i; j < arr[i].size(); j++)
+    //     {
+    //         swap(arr[i][j], arr[j][i]);
+    //     }
+    // }
+    // for (int i = 0; i < arr.size(); i++)
+    // {
+    //     for (int j = 0; j < arr[i].size(); j++)
+    //     {
+    //         cout << arr[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
-    cout << "reverse" << endl;
-    for (int i = 0; i < arr.size(); i++)
-    {
-        reverse(arr[i].begin(), arr[i].end());
-    }
+    // cout << "reverse" << endl;
+    // for (int i = 0; i < arr.size(); i++)
+    // {
+    //     reverse(arr[i].begin(), arr[i].end());
+    // }
 
-    for (int i = 0; i < arr.size(); i++)
-    {
-        for (int j = 0; j < arr[i].size(); j++)
-        {
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for (int i = 0; i < arr.size(); i++)
+    // {
+    //     for (int j = 0; j < arr[i].size(); j++)
+    //     {
+    //         cout << arr[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
     return 0;
 }
