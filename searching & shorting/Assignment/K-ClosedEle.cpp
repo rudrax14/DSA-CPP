@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 // through sorting O(nlogn)
 
 // vector<int> findClosestElements(vector<int> &arr, int k, int x)
@@ -54,52 +53,94 @@ using namespace std;
 
 // two pointer approach
 
+// vector<int> twoPointerApproach(vector<int> &arr, int k, int diff)
+// {
+//     int l = 0;
+//     int h = arr.size() - 1;
+//     vector<int> ans;
 
+//     while (h-l >= k)
+//     {
+//         if (diff - arr[l] > arr[h] - diff)
+//         {
+//             l++;
+//         }
+//         else
+//         {
+//             h--;
+//         }
+//         // ans.clear(); // Clearing the vector before repopulating
+//         for (int i = l; i <= h; i++)
+//         {
+//             ans.push_back(arr[i]);
+//         }
+//     }
+//     return ans;
+// }
 
+// int main()
+// {
+//     vector<int> arr = {1, 2, 3, 4, 5};
 
+//     int diff = 3;
+//     int k = 4;
 
+//     vector<int> twoPointer = twoPointerApproach(arr, k, diff);
 
+//     for (int num : twoPointer)
+//     {
+//         cout << num << " ";
+//     }
+//     cout << endl;
 
+//     return 0;
+// }
 
-vector<int> twoPointerApproach(vector<int> &arr, int k, int diff)
+// binary search approach
+
+int lower_bound(vector<int> &arr, int k, int x)
 {
-    int l = 0;
-    int h = arr.size() - 1;
-    vector<int> ans;
+    int start = 0;
+    int end = arr.size() - 1;
+    int ans = end;
 
-    while (h-l >= k)
+    while (start <= end)
     {
-        if (diff - arr[l] > arr[h] - diff)
+        int mid = start + (end - start) / 2;
+        if (arr[mid] >= x)
         {
-            l++;
+            ans = mid;
+            end = mid - 1;
+        }
+        else if (x > arr[mid])
+        {
+            start = mid + 1;
         }
         else
         {
-            h--;
-        }
-        // ans.clear(); // Clearing the vector before repopulating
-        for (int i = l; i <= h; i++)
-        {
-            ans.push_back(arr[i]);
+            end = mid - 1;
         }
     }
     return ans;
 }
-
 int main()
+
 {
     vector<int> arr = {1, 2, 3, 4, 5};
-
-    int diff = 3;
     int k = 4;
-
-    vector<int> twoPointer = twoPointerApproach(arr, k, diff);
-
-    for (int num : twoPointer)
+    int x = 3;
+    int h = lower_bound(arr, k, x);
+    int l = h - 1;
+    while (k--)
     {
-        cout << num << " ";
+        if (x - arr[l] > arr[h] - x)
+        {
+            cout << arr[h++] << " ";
+        }
+        else
+        {
+            cout << arr[l--] << " ";
+        }
     }
-    cout << endl;
-
     return 0;
 }
